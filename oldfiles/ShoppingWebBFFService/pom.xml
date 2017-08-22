@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.pwte.example</groupId>
+  <artifactId>ShoppingWebBFFService</artifactId>
+  <version>0.1</version>
+  <name>Shopping Services Web Module</name>
+  <packaging>war</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>javaee</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>5</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.json -->
+	<dependency>
+	    <groupId>com.ibm.websphere.appserver.api</groupId>
+	    <artifactId>com.ibm.websphere.appserver.api.json</artifactId>
+	    <version>1.0</version>
+	</dependency>
+    <dependency>
+      <groupId>javax.ws.rs</groupId>
+      <artifactId>javax.ws.rs-api</artifactId>
+      <version>2.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-jaxrs</artifactId>
+      <version>1.7.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+        <groupId>javax.ws.rs</groupId>
+        <artifactId>javax.ws.rs-api</artifactId>
+        <version>2.0.1</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <configuration>
+          <webXml>WebContent/WEB-INF/web.xml</webXml>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <webResources>
+            <resource>
+              <directory>WebContent</directory>
+            </resource>
+          </webResources>
+        </configuration>
+      </plugin>
+    </plugins>
+    <sourceDirectory>src</sourceDirectory>
+  </build>
+</project>

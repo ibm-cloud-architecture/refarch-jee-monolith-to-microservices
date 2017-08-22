@@ -1,0 +1,37 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: shoppingwebbffservice
+spec:
+  replicas: 1
+  template:
+    metadata:
+     name: shoppingwebbffservice
+     labels:
+       run: shoppingwebbffservice
+       test: shoppingwebbffservice
+    spec:
+      containers:
+        - name: shoppingwebbffservice
+          image: shoppingwebbffservice
+          ports:
+          - containerPort: 9443
+          - containerPort: 9080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: shoppingwebbffservice
+  labels:
+    run: shoppingwebbffservice
+spec:
+  type: NodePort
+  selector:
+    run: shoppingwebbffservice
+  ports:
+   - protocol: TCP
+     port: 9080
+     name: http
+   - protocol: TCP
+     port: 9443
+     name: https
