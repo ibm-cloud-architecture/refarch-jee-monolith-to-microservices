@@ -1,3 +1,6 @@
 [submodule "Microservices/refarch-jee-micro-customer-service"]
 	path = Microservices/refarch-jee-micro-customer-service
 	url = https://github.com/ibm-cloud-architecture/refarch-jee-micro-customer-service
+[submodule "Microservices/refarch-jee-micro-product-service"]
+	path = Microservices/refarch-jee-micro-product-service
+	url = https://github.com/ibm-cloud-architecture/refarch-jee-micro-product-service
