@@ -61,19 +61,19 @@ Instead of having a monolithic app as a single EAR, it was percived that the app
  - Steps followed to break it into 2 EARs
 The multiple EJB  Business functionality included in the same EAR has been split into individual 
 JEE EJB packages using the following steps:
-•	Create a directory ProductSearchService and copy the CustomerOrderServices content into that. 
-•	Delete the ProductSearchService and ProductSearchServiceImpl class from CustomerOrderServices ejbmodule directory.  
-•	Delete CustomerOrderServices and CustomerOrderServicesImpl from ProductSearchService ejbmodule directory.
-•	There is no change in the utility classes used in both the modules
+* Create a directory ProductSearchService and copy the CustomerOrderServices content into that. 
+* Delete the ProductSearchService and ProductSearchServiceImpl class from CustomerOrderServices ejbmodule directory.  
+* Delete CustomerOrderServices and CustomerOrderServicesImpl from ProductSearchService ejbmodule directory.
+* There is no change in the utility classes used in both the modules
  
  - Steps followed to expose them to the outside world as Services
 The wrapper classes are used to expose the EJB REST API Java classes in the respective Web
 Modules CustomerOrderServicesWeb and ProductSearchServiceWeb to access from outside. 
 The steps required to do the same are
-•	Create a directory ProductSearchServiceWeb and copy the contents of CustomerOrderServicesWeb into it.  
-•	Rename the CustomerServicesApp class as ProductSearchServiceApp class for ProductSearchServiceWeb module Java src folder and remove the CustomerOrderResource class in it.
-•	Remove the CategoryResource and ProductResource from CustomerOrderServicesWeb.
-•	Delete WebContent from both the modules. Modify the pom.xml file accordingly
+* Create a directory ProductSearchServiceWeb and copy the contents of CustomerOrderServicesWeb into it.  
+* Rename the CustomerServicesApp class as ProductSearchServiceApp class for ProductSearchServiceWeb module Java src folder and remove the CustomerOrderResource class in it.
+* Remove the CategoryResource and ProductResource from CustomerOrderServicesWeb.
+* Delete WebContent from both the modules. Modify the pom.xml file accordingly
 
 ## Step 4 - Handle Application Security
 When you refactor your application into Microservices, your traditional application security mechanism may not work. As a sample implementation, we have used Open LDAP as our directory server and SSO provider, which can federate access to different microservices and pass on the access context appropriately. For the shopping application, we have used Liberty as the implementation runtime. Appropriate changes were made to the server configuruation files (Server.xml) to enable SSO and use OLDAP as the SSO service provider. The detail steps are discussed [here](Legacy-Backend/SSO_OpenLDAP_Configuration.md). 
