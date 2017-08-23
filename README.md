@@ -85,10 +85,6 @@ When you refactor your application into Microservices, your traditional applicat
 -   [Customer Order Microservice](https://github.com/ibm-cloud-architecture/refarch-jee-micro-customer-service)
 -   [Legacy Application](Legacy-Backend)
 
-## Steps followed to setup Bluemix
-- Steps to create the required Bluemix services (WAS, dashDB, Kubernetes Cluster) etc
-- Steps to populate the database
-
 
 ## Steps followed to Build and Deploy the application
 
