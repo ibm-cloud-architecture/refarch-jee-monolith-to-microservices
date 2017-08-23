@@ -2,7 +2,7 @@
 
 **Setting Up Security**
 
-1.  Log into the Admin Console via <http://localhost:9043/admin>.
+1.  Log into the Admin Console.
 
 2.  In the Global security section, check **Enable application
     security** and click **Save**.
@@ -16,7 +16,7 @@
 
 -   username: **kbrown** password: **bl0wfish**
 
-<img src="images/image2.png" width="521" height="311" />
+<img src="../images/image2.png" width="521" height="311" />
 
 1.  In the **Users and Groups** section, select **Manage Groups** and
     create the following group:
@@ -28,7 +28,7 @@ users and groups with appropriate roles can execute certain actions. As
 a result, all users must belong to the SecureShopper group if they want
 to be able to access to the protected customer resources:
 
-<img src="images/image3.png" width="508" height="313" />
+<img src="../images/image3.png" width="508" height="313" />
 
 During deployment, you will need to map your desired users or groups to
 the **SecureShopper** role. By default, SecureShopper group gets mapped
@@ -44,14 +44,14 @@ in *[*here*](https://github.com/ibm-cloud-architecture/refarch-jee)*.*
     Create a new user named IN**DB\_USER** using your db2 instance
     and password.
 
-<img src="images/image4.png" width="315" height="305" />
+<img src="../images/image4.png" width="315" height="305" />
 
 **Configuring JDBC Resources**
 
 1.  Go to the **Resources &gt; JDBC &gt; JDBC Providers** section and
     ensure that you are at the **Cell** scope.
 
-> <img src="images/image5.png" width="624" height="119" />
+> <img src="../images/image5.png" width="624" height="119" />
 
 1.  Click the New Button to create a new JDBC provider.
 
@@ -61,7 +61,7 @@ in *[*here*](https://github.com/ibm-cloud-architecture/refarch-jee)*.*
 
 -   Implementation type : **XA data source**
 
-<img src="images/image6.png" width="624" height="315" />
+<img src="../images/image6.png" width="624" height="315" />
 
 1.  You need to enter the database class path information. Enter the
     directory where the DB2 Java is set.
@@ -71,7 +71,7 @@ in *[*here*](https://github.com/ibm-cloud-architecture/refarch-jee)*.*
 > installed on the same then use /home/db2inst1/sqllib/java path.
 
 1.  Press **Next** and then **Finish**. Save the Configuration.
-    <img src="images/image7.png" width="624" height="305" />
+    <img src="../images/image7.png" width="624" height="305" />
 
 2.  Go to the **Resources &gt; JDBC &gt; Data sources** section to
     create a new data source.
@@ -86,14 +86,14 @@ in *[*here*](https://github.com/ibm-cloud-architecture/refarch-jee)*.*
 
     -   JNDI name: **jdbc/orderds**
 
-> <img src="images/image8.png" width="624" height="220" />
+> <img src="../images/image8.png" width="624" height="220" />
 
 1.  OrderDB - Step 2
 
 -   Select an existing JDBC provider --&gt; **DB2 Using IBM JCC
     Driver (XA)** 
 
-<img src="images/image9.png" width="624" height="196" />
+<img src="../images/image9.png" width="624" height="196" />
 
 1.  ORDERDB - Step 3
 
@@ -105,7 +105,7 @@ in *[*here*](https://github.com/ibm-cloud-architecture/refarch-jee)*.*
 
 -   Port number: **Your default DB2 port** 
 
-<img src="images/image10.png" width="624" height="211" />
+<img src="../images/image10.png" width="624" height="211" />
 
 1.  OrderDB - Step 4
 
@@ -117,14 +117,14 @@ in *[*here*](https://github.com/ibm-cloud-architecture/refarch-jee)*.*
 
 -   Container-managed authentication alias: **ORDERDB\_USER**
 
-<img src="images/image11.png" width="624" height="268" />
+<img src="../images/image11.png" width="624" height="268" />
 
 1.  Once this is done, under Preferences, there will be a new resource
     called **OrderDS**. Make sure that the resources got connected
     using **Test Connection** option. You will see a success message if
     the connection is established successfully.
 
-<img src="images/image12.png" width="624" height="492" />
+<img src="../images/image12.png" width="624" height="492" />
 
 1.  Check the Data source and select Test Connection to ensure you
     created the database correctly. If the connection fails, a few
@@ -191,7 +191,7 @@ in *[*here*](https://github.com/ibm-cloud-architecture/refarch-jee)*.*
 
 4.  Click Apply and Save.
 
-<img src="images/image13.png" width="623" height="302" />
+<img src="../images/image13.png" width="623" height="302" />
 
 ##### Configure JAX-RS
 
@@ -202,7 +202,7 @@ in *[*here*](https://github.com/ibm-cloud-architecture/refarch-jee)*.*
 
 3.  Click Apply and Save.
 
-<img src="images/image14.png" width="485" height="155" />
+<img src="../images/image14.png" width="485" height="155" />
 
 ###  Installing the Application in WAS9
 
@@ -224,30 +224,30 @@ in *[*here*](https://github.com/ibm-cloud-architecture/refarch-jee)*.*
     -   Select **Applications &gt; Application Types &gt; WebSphere
         enterprise applications**
 
-<img src="images/image15.png" width="515" height="157" />
+<img src="../images/image15.png" width="515" height="157" />
 
 -   Choose **Install &gt; Browse the EAR **
 
-<img src="images/image16.png" width="494" height="180" />
+<img src="../images/image16.png" width="494" height="180" />
 
 -   **Next &gt; Choose Detailed**
 
-> <img src="images/image17.png" width="406" height="234" />
+> <img src="../images/image17.png" width="406" height="234" />
 >
 > Click on **Step 11**. Verify the **SecureShopper** role is mapped to
 > the **SecureShopper** group (or a corresponding group in your
 > application server's user registry). 
 
-<img src="images/image18.png" width="559" height="386" />
+<img src="../images/image18.png" width="559" height="386" />
 
 1.  -   Click on **Summary** (Step 15) and click **Finish**.
 
     -   Once you see Application CustomerOrderServicesApp installed
         successfully, click **Save** and now your application is ready.
 
-<img src="images/image19.png" width="551" height="352" />
+<img src="../images/image19.png" width="551" height="352" />
 
 1.  Go back to the Enterprise Applications list, select the application,
     and click **Start**.
 
-<img src="images/image20.png" width="624" height="212" />
+<img src="../images/image20.png" width="624" height="212" />
