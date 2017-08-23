@@ -58,18 +58,15 @@ E.g. Now the backend services has ProductSearch module. This service could be wr
 Instead of having a monolithic app as a single EAR, it was percived that the application should be broken into logical units so that we can take it towards a microservice architecture and have better control over individual functionalities of the application. Hence the single EAR was broken into two EARS having one EJB each. These EJBs are called CustomerOrder EJB and ProductSearch EJB. 
 
 
- - Steps followed to break it into 2 EARs
-The multiple EJB  Business functionality included in the same EAR has been split into individual 
-JEE EJB packages using the following steps:
+#### Steps followed to break it into 2 EARs
+The multiple EJB  Business functionality included in the same EAR has been split into individual JEE EJB packages using the following steps:
 * Create a directory ProductSearchService and copy the CustomerOrderServices content into that. 
 * Delete the ProductSearchService and ProductSearchServiceImpl class from CustomerOrderServices ejbmodule directory.  
 * Delete CustomerOrderServices and CustomerOrderServicesImpl from ProductSearchService ejbmodule directory.
 * There is no change in the utility classes used in both the modules
  
- - Steps followed to expose them to the outside world as Services
-The wrapper classes are used to expose the EJB REST API Java classes in the respective Web
-Modules CustomerOrderServicesWeb and ProductSearchServiceWeb to access from outside. 
-The steps required to do the same are
+#### Steps followed to expose them to the outside world as Services
+The wrapper classes are used to expose the EJB REST API Java classes in the respective WebModules CustomerOrderServicesWeb and ProductSearchServiceWeb to access from outside. The steps required to do the same are
 * Create a directory ProductSearchServiceWeb and copy the contents of CustomerOrderServicesWeb into it.  
 * Rename the CustomerServicesApp class as ProductSearchServiceApp class for ProductSearchServiceWeb module Java src folder and remove the CustomerOrderResource class in it.
 * Remove the CategoryResource and ProductResource from CustomerOrderServicesWeb.
