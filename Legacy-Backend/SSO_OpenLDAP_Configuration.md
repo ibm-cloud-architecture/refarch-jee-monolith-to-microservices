@@ -129,8 +129,8 @@ same into Liberty Server Docker Container.
                                                                                                                                                              
  Expand Security and Click Global Security link.  
  
-<img src="images/WAS_OpenLDAP_Custom_Config.png" width="623" height="208" />
+<img src="../images/WAS_OpenLDAP_Custom_Config.png" width="623" height="208" />
 
 Enter unique distinguished name as “dc=purplecompute,dc=com”
 
-<img src="images/WAS_OpenLDAP_Custom_DN.png" width="623" height="208" />
+<img src="../images/WAS_OpenLDAP_Custom_DN.png" width="623" height="208" />
