@@ -7,7 +7,7 @@
 2.  In the Global security section, check **Enable application
     security** and click **Save**.
 
-<img src="images/image1.png" width="623" height="367" />
+<img src="../images/image1.png" width="623" height="367" />
 
 1.  In the **Users and Groups** section, select **Manage Users** and
     create the following users:
