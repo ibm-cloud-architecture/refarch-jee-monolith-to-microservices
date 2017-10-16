@@ -1,0 +1,45 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: elk-bluemix
+spec:
+  replicas: 1
+  template:
+    metadata:
+     name: elk-bluemix
+     labels:
+       run: elk-bluemix
+       test: elk-bluemix
+    spec:
+      containers:
+        - name: elk-bluemix
+          image: jconallen/elk-bluemix:latest
+          ports:
+          - containerPort: 5601
+          - containerPort: 9200
+          - containerPort: 5044
+          - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: elk-bluemix
+  labels:
+    run: elk-bluemix
+spec:
+  type: NodePort
+  selector:
+    run: elk-bluemix
+  ports:
+   - protocol: TCP
+     port: 5601
+     name: httpa
+   - protocol: TCP
+     port: 9200
+     name: httpb
+   - protocol: TCP
+     port: 5044
+     name: httpc
+   - protocol: TCP
+     port: 5000
+     name: httpd
