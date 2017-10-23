@@ -22,7 +22,7 @@ but the worker node in the cluster takes a few hours to provision. You can see t
 
 Verify the IBM Bluemix Dashboard  for the status of Kubernetes Cluster &quot;dev\_cluster&quot; .
 
-<img src="images/KubernetesCluster_ELK_image1.png" width="623" height="208" />
+<img src="../images/KubernetesCluster_ELK_image1.png" width="623" height="208" />
 
 Open shell window and execute the following commands to launch Kubernetes Dashboard:
 
@@ -68,13 +68,13 @@ Port and Target ports:  5000  5000
 
 Click Deploy
 
-<img src="images/KubernetesCluster_ELK_image2.png" width="623" height="208" />
+<img src="../images/KubernetesCluster_ELK_image2.png" width="623" height="208" />
 
 Note: Wait for an hour to provision the external ports and deployment completion
 
 Click on the bmelk and under services find the port mapping for public access
 
-<img src="images/KubernetesCluster_ELK_image4.png" width="623" height="208" />
+<img src="../images/KubernetesCluster_ELK_image4.png" width="623" height="208" />
 
 The public ports can be used with public IP address of the dev\_cluster  which is obtained from IBM Bluemix Dashboard.
 
