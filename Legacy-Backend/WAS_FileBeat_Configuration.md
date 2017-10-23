@@ -10,7 +10,7 @@ Using the Dashboard Click on the WAS Instance and do the following.
 
 Install VPN by downloading the OpenVPN from IBM Bluemix Dashboard while provisioned WAS on Cloud.
 
-<img src="images/WAS_FileBeat_Config_image1.png" width="623" height="208" />
+<img src="../images/WAS_FileBeat_Config_image1.png" width="623" height="208" />
 
 Download the VPN configuration zip file.
 
@@ -20,7 +20,7 @@ Extract the configuration zip file into   C:\Program Files\OpenVPN\config direct
 
 Note: 3 files are copied as shown below.
 
-<img src="images/WAS_FileBeat_Config_image2.png" width="623" height="208" />
+<img src="../images/WAS_FileBeat_Config_image2.png" width="623" height="208" />
 
 Go to the  directory C:\Program Files\OpenVPN\bin
 
@@ -32,7 +32,7 @@ Download Linux 64 bit from the below URL
 
 You can find the Host IP Address and Linux version, OS Admin Username and Admin Password from the WAS instance.
 
-<img src="images/WAS_FileBeat_Config_image3.png" width="623" height="208" />
+<img src="../images/WAS_FileBeat_Config_image3.png" width="623" height="208" />
 
 Use the above information to connect using the tools to perform the following:
 
